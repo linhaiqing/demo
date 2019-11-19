@@ -1,5 +1,5 @@
 <?php
-namespace app\controller;
+namespace app\index\controller;
 
 use app\BaseController;
 
@@ -13,5 +13,18 @@ class Index extends BaseController
     public function hello($name = 'ThinkPHP6')
     {
         return 'hello,' . $name;
+    }
+
+    public function test()
+    {
+        //模式分隔符后的"i"标记这是一个大小写不敏感的搜索
+        if (preg_match("/[0-9]+/", "abc123def", $matches)) {
+        echo '<pre>';
+        print_r($matches);
+        die();
+            echo "查找到匹配的字符串 php。";
+        } else {
+            echo "未发现匹配的字符串 php。";
+        }
     }
 }
